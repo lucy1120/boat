@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <title>主页</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 头部 -->
+    <div class="head">
+      <div class="navigator">
+        <div id="left_buttons" class="flexrow with_news_button" data-v-56f995fd="">
+          <div id="new_logo_item" data-v-56f995fd=""><a href="/"
+              class="router-link-active router-link-exact-active no-underline-link" data-v-56f995fd=""
+              aria-current="page">
+              <div data-v-56f995fd=""><svg width="230" height="40" viewBox="0 0 230 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect width="230" height="40" fill="transparent"></rect>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M28.0537 22.0888L25.8211 15.0834L26.4328 14.9302L28.6655 21.9356L28.0537 22.0888Z"
+                    fill="url(#paint0_linear)"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M18.254 23.1579L23.2987 14.3158L23.8462 14.6291L18.8015 23.4712L18.254 23.1579Z"
+                    fill="url(#paint1_linear)"></path>
+                  <path
+                    d="M30.8658 21.8947C30.8658 23.29 29.7365 24.4211 28.3434 24.4211C26.9504 24.4211 25.8211 23.29 25.8211 21.8947C25.8211 20.4995 26.9504 19.3684 28.3434 19.3684C29.7365 19.3684 30.8658 20.4995 30.8658 21.8947Z"
+                    fill="url(#paint2_linear)"></path>
+                  <path
+                    d="M22.0375 26.9474C22.0375 29.7379 19.7789 32 16.9928 32C14.2067 32 11.9481 29.7379 11.9481 26.9474C11.9481 24.1569 14.2067 21.8947 16.9928 21.8947C19.7789 21.8947 22.0375 24.1569 22.0375 26.9474Z"
+                    fill="url(#paint3_linear)"></path>
+                  <path
+                    d="M28.8477 11.7895C28.8477 13.8823 27.1537 15.5789 25.0641 15.5789C22.9745 15.5789 21.2806 13.8823 21.2806 11.7895C21.2806 9.69661 22.9745 8 25.0641 8C27.1537 8 28.8477 9.69661 28.8477 11.7895Z"
+                    fill="url(#paint4_linear)"></path>
+                  <path
+                    d="M51.1885 22.7373C51.0889 24.1143 50.5791 25.1982 49.6592 25.9893C48.7451 26.7803 47.5381 27.1758 46.0381 27.1758C44.3975 27.1758 43.1055 26.625 42.1621 25.5234C41.2246 24.416 40.7559 22.8984 40.7559 20.9707V20.1885C40.7559 18.958 40.9727 17.874 41.4062 16.9365C41.8398 15.999 42.458 15.2812 43.2607 14.7832C44.0693 14.2793 45.0068 14.0273 46.0732 14.0273C47.5498 14.0273 48.7393 14.4229 49.6416 15.2139C50.5439 16.0049 51.0654 17.1152 51.2061 18.5449H48.5693C48.5049 17.7188 48.2734 17.1211 47.875 16.752C47.4824 16.377 46.8818 16.1895 46.0732 16.1895C45.1943 16.1895 44.5352 16.5059 44.0957 17.1387C43.6621 17.7656 43.4395 18.7412 43.4277 20.0654V21.0322C43.4277 22.415 43.6357 23.4258 44.0518 24.0645C44.4736 24.7031 45.1357 25.0225 46.0381 25.0225C46.8525 25.0225 47.459 24.8379 47.8574 24.4688C48.2617 24.0938 48.4932 23.5166 48.5518 22.7373H51.1885Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M63.4316 20.8916C63.4316 22.1514 63.209 23.2559 62.7637 24.2051C62.3184 25.1543 61.6797 25.8867 60.8477 26.4023C60.0215 26.918 59.0723 27.1758 58 27.1758C56.9395 27.1758 55.9932 26.9209 55.1611 26.4111C54.3291 25.9014 53.6846 25.1748 53.2275 24.2314C52.7705 23.2822 52.5391 22.1924 52.5332 20.9619V20.3291C52.5332 19.0693 52.7588 17.9619 53.21 17.0068C53.667 16.0459 54.3086 15.3105 55.1348 14.8008C55.9668 14.2852 56.916 14.0273 57.9824 14.0273C59.0488 14.0273 59.9951 14.2852 60.8213 14.8008C61.6533 15.3105 62.2949 16.0459 62.7461 17.0068C63.2031 17.9619 63.4316 19.0664 63.4316 20.3203V20.8916ZM60.7598 20.3115C60.7598 18.9697 60.5195 17.9502 60.0391 17.2529C59.5586 16.5557 58.873 16.207 57.9824 16.207C57.0977 16.207 56.415 16.5527 55.9346 17.2441C55.4541 17.9297 55.2109 18.9375 55.2051 20.2676V20.8916C55.2051 22.1982 55.4453 23.2119 55.9258 23.9326C56.4062 24.6533 57.0977 25.0137 58 25.0137C58.8848 25.0137 59.5645 24.668 60.0391 23.9766C60.5137 23.2793 60.7539 22.2656 60.7598 20.9355V20.3115Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M75.7539 27H73.1172L67.9844 18.5801V27H65.3477V14.2031H67.9844L73.126 22.6406V14.2031H75.7539V27Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M88.4629 27H85.8262L80.6934 18.5801V27H78.0566V14.2031H80.6934L85.835 22.6406V14.2031H88.4629V27Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M98.4648 21.4541H93.4023V24.8818H99.3438V27H90.7656V14.2031H99.3262V16.3389H93.4023V19.3887H98.4648V21.4541Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M110.937 22.7373C110.837 24.1143 110.327 25.1982 109.407 25.9893C108.493 26.7803 107.286 27.1758 105.786 27.1758C104.146 27.1758 102.854 26.625 101.91 25.5234C100.973 24.416 100.504 22.8984 100.504 20.9707V20.1885C100.504 18.958 100.721 17.874 101.154 16.9365C101.588 15.999 102.206 15.2812 103.009 14.7832C103.817 14.2793 104.755 14.0273 105.821 14.0273C107.298 14.0273 108.487 14.4229 109.39 15.2139C110.292 16.0049 110.813 17.1152 110.954 18.5449H108.317C108.253 17.7188 108.021 17.1211 107.623 16.752C107.23 16.377 106.63 16.1895 105.821 16.1895C104.942 16.1895 104.283 16.5059 103.844 17.1387C103.41 17.7656 103.188 18.7412 103.176 20.0654V21.0322C103.176 22.415 103.384 23.4258 103.8 24.0645C104.222 24.7031 104.884 25.0225 105.786 25.0225C106.601 25.0225 107.207 24.8379 107.605 24.4688C108.01 24.0938 108.241 23.5166 108.3 22.7373H110.937Z"
+                    fill="#fff"></path>
+                  <path d="M122.037 16.3389H118.117V27H115.48V16.3389H111.613V14.2031H122.037V16.3389Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M131.248 21.4541H126.186V24.8818H132.127V27H123.549V14.2031H132.109V16.3389H126.186V19.3887H131.248V21.4541Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M133.674 27V14.2031H137.611C138.736 14.2031 139.741 14.458 140.626 14.9678C141.517 15.4717 142.211 16.1924 142.709 17.1299C143.207 18.0615 143.456 19.1221 143.456 20.3115V20.9004C143.456 22.0898 143.21 23.1475 142.718 24.0732C142.231 24.999 141.543 25.7168 140.652 26.2266C139.762 26.7363 138.757 26.9941 137.638 27H133.674ZM136.311 16.3389V24.8818H137.585C138.616 24.8818 139.404 24.5449 139.949 23.8711C140.494 23.1973 140.772 22.2334 140.784 20.9795V20.3027C140.784 19.002 140.515 18.0176 139.976 17.3496C139.437 16.6758 138.648 16.3389 137.611 16.3389H136.311Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M152.5 22.4912V27H149.863V14.2031H154.855C155.816 14.2031 156.66 14.3789 157.387 14.7305C158.119 15.082 158.682 15.583 159.074 16.2334C159.467 16.8779 159.663 17.6133 159.663 18.4395C159.663 19.6934 159.232 20.6836 158.371 21.4102C157.516 22.1309 156.329 22.4912 154.812 22.4912H152.5ZM152.5 20.3555H154.855C155.553 20.3555 156.083 20.1914 156.446 19.8633C156.815 19.5352 157 19.0664 157 18.457C157 17.8301 156.815 17.3232 156.446 16.9365C156.077 16.5498 155.567 16.3506 154.917 16.3389H152.5V20.3555Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M167.143 24.3633H162.52L161.641 27H158.837L163.601 14.2031H166.044L170.834 27H168.03L167.143 24.3633ZM163.231 22.2275H166.431L164.822 17.4375L163.231 22.2275Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M174.666 22.4912V27H172.029V14.2031H177.021C177.982 14.2031 178.826 14.3789 179.553 14.7305C180.285 15.082 180.848 15.583 181.24 16.2334C181.633 16.8779 181.829 17.6133 181.829 18.4395C181.829 19.6934 181.398 20.6836 180.537 21.4102C179.682 22.1309 178.495 22.4912 176.978 22.4912H174.666ZM174.666 20.3555H177.021C177.719 20.3555 178.249 20.1914 178.612 19.8633C178.981 19.5352 179.166 19.0664 179.166 18.457C179.166 17.8301 178.981 17.3232 178.612 16.9365C178.243 16.5498 177.733 16.3506 177.083 16.3389H174.666V20.3555Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M191.348 21.4541H186.285V24.8818H192.227V27H183.648V14.2031H192.209V16.3389H186.285V19.3887H191.348V21.4541Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M198.511 22.3154H196.41V27H193.773V14.2031H198.528C200.04 14.2031 201.206 14.54 202.026 15.2139C202.847 15.8877 203.257 16.8398 203.257 18.0703C203.257 18.9434 203.066 19.6729 202.686 20.2588C202.311 20.8389 201.739 21.3018 200.972 21.6475L203.74 26.877V27H200.91L198.511 22.3154ZM196.41 20.1797H198.537C199.199 20.1797 199.712 20.0127 200.075 19.6787C200.438 19.3389 200.62 18.873 200.62 18.2812C200.62 17.6777 200.447 17.2031 200.102 16.8574C199.762 16.5117 199.237 16.3389 198.528 16.3389H196.41V20.1797Z"
+                    fill="#fff"></path>
+                  <path
+                    d="M211.905 23.6426C211.905 23.1445 211.729 22.7637 211.378 22.5C211.026 22.2305 210.394 21.9492 209.479 21.6562C208.565 21.3574 207.842 21.0645 207.309 20.7773C205.855 19.9922 205.129 18.9346 205.129 17.6045C205.129 16.9131 205.322 16.2979 205.709 15.7588C206.102 15.2139 206.661 14.7891 207.388 14.4844C208.12 14.1797 208.94 14.0273 209.849 14.0273C210.763 14.0273 211.577 14.1943 212.292 14.5283C213.007 14.8564 213.561 15.3223 213.953 15.9258C214.352 16.5293 214.551 17.2148 214.551 17.9824H211.914C211.914 17.3965 211.729 16.9424 211.36 16.6201C210.991 16.292 210.473 16.1279 209.805 16.1279C209.16 16.1279 208.659 16.2656 208.302 16.541C207.944 16.8105 207.766 17.168 207.766 17.6133C207.766 18.0293 207.974 18.3779 208.39 18.6592C208.812 18.9404 209.43 19.2041 210.244 19.4502C211.744 19.9014 212.837 20.4609 213.522 21.1289C214.208 21.7969 214.551 22.6289 214.551 23.625C214.551 24.7324 214.132 25.6025 213.294 26.2354C212.456 26.8623 211.328 27.1758 209.91 27.1758C208.926 27.1758 208.029 26.9971 207.221 26.6396C206.412 26.2764 205.794 25.7812 205.366 25.1543C204.944 24.5273 204.733 23.8008 204.733 22.9746H207.379C207.379 24.3867 208.223 25.0928 209.91 25.0928C210.537 25.0928 211.026 24.9668 211.378 24.7148C211.729 24.457 211.905 24.0996 211.905 23.6426Z"
+                    fill="#fff"></path>
+                  <svg t="1647414399119" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2320" width="40" height="40">
+                    <path
+                      d="M544.905147 141.975442l-185.847554-0.50159-190.774187 190.786939 173.630865 0.590856"
+                      fill="#F0F0FF" p-id="2321"></path>
+                    <path
+                      d="M404.506737 163.046468l5.377214-5.377214H359.023587L200.419165 316.273676l50.754095 0.11052 130.740679-130.740679H455.014288l22.59705-22.597049z"
+                      fill="#FFFFFF" p-id="2322"></path>
+                    <path
+                      d="M544.964657 120.721633l-185.847553-0.50159a21.26231 21.26231 0 0 0-15.085954 6.223116L153.252713 317.230097a21.258059 21.258059 0 0 0-4.624829 23.128395 21.258059 21.258059 0 0 0 19.574758 13.151857l173.630864 0.595106a21.253809 21.253809 0 0 0 0.148777-42.507617l-173.626614-0.590856A21.249558 21.249558 0 0 1 183.305598 347.287234l190.774187-190.782689a21.253809 21.253809 0 0 1-15.085954 6.223116l185.843303 0.497339a21.26231 21.26231 0 0 0 21.31757-21.198549 21.241056 21.241056 0 0 0-21.190047-21.304818zM670.629926 1002.746191h-78.639092c-11.740604 0-21.253809-9.513205-21.253808-21.253808s9.513205-21.253809 21.253808-21.253809h78.639092c11.740604 0 21.253809 9.513205 21.253809 21.253809s-9.513205 21.253809-21.253809 21.253808zM430.466139 1002.746191H356.073558c-112.071333 0-181.25248-29.143222-205.626348-86.626273-24.191085-57.057975-1.776818-137.410124 66.626439-238.824797 48.802995-72.352215 103.085223-128.730068 105.372133-131.097743a21.253809 21.253809 0 0 1 30.558726 29.551296c-58.137668 60.15678-200.831489 235.598469-163.416284 323.784772 17.088062 40.280218 73.10035 60.700878 166.485334 60.700877h74.392581a21.253809 21.253809 0 1 1 0 42.511868z"
+                      fill="#6E6E96" p-id="2323"></path>
+                    <path
+                      d="M737.507161 363.431627l-0.004251 167.463009-188.708316 188.704066-0.114771-174.489519"
+                      fill="#F0F0FF" p-id="2324"></path>
+                    <path
+                      d="M564.819965 600.131043l172.687196-172.691446V374.725901l-172.729703 170.379031zM566.711554 532.900995l146.294216-146.294215c164.580993-164.576742 129.665236-319.185448 117.202003-331.648682-9.15189-9.147639-158.774452-55.697731-331.648682 117.193501L352.252123 318.454317s-67.200292 63.863444 41.695722 172.755207c108.896014 108.891763 172.763709 41.691471 172.763709 41.691471z"
+                      fill="#D5D5E8" p-id="2325"></path>
+                    <path
+                      d="M527.192222 452.009l89.950369-83.501964c121.996862-128.232729 157.014637-249.706747 147.777732-259.419738-6.775714-7.128527-165.261115-29.058207-293.413079 105.652683L424.685103 328.732659s-56.883694 73.359646 5.908559 123.27209c53.810393 36.985878 96.59856 0.004251 96.59856 0.004251z"
+                      fill="#F0F0FF" p-id="2326"></path>
+                    <path
+                      d="M458.453154 512.688623C339.627361 404.136921 412.957252 340.46051 412.957252 340.46051l159.65436-145.852136c46.834893-42.788168 130.821443-85.516825 192.308711-85.516825-62.919775-26.758545-197.787943-0.297553-298.88806 111.790783l-121.31674 134.519606s-55.723236 37.372697 34.575696 137.473885c76.254415 84.564654 125.890559 74.983437 139.475994 63.323598-18.371792-9.593969-38.511901-23.583226-60.314059-43.510798z"
+                      fill="#FFFFFF" opacity=".83" p-id="2327"></path>
+                    <path
+                      d="M716.253352 363.431627l-0.004251 167.463009c0-5.63651 2.235901-11.04773 6.227366-15.026443l-188.708316 188.704066a21.253809 21.253809 0 0 1 36.280251 15.01369l-0.11477-174.489518a21.253809 21.253809 0 1 0-42.507618 0.025504l0.114771 174.489519a21.253809 21.253809 0 0 0 36.280251 15.01369l188.708317-188.704065a21.253809 21.253809 0 0 0 6.227366-15.026443l0.00425-167.463009a21.253809 21.253809 0 0 0-21.253808-21.253809 21.253809 21.253809 0 0 0-21.253809 21.253809z"
+                      fill="#6E6E96" p-id="2328"></path>
+                    <path
+                      d="M581.737997 547.927438l146.294216-146.294216c90.787769-90.79202 121.308238-177.558568 130.923461-234.348745 10.159321-60.029257 0.790642-112.844972-13.717208-127.352821-21.59387-21.581117-184.670093-59.854976-361.714319 117.193501L337.225681 303.427874l0.386819-0.378318c-2.720488 2.584463-26.567261 26.473744-27.111358 69.244909-0.544098 42.945446 22.473777 88.00352 68.41601 133.941502 45.946484 45.950734 91.01731 68.968609 133.958505 68.424512 42.771165-0.544098 66.660445-24.390871 69.244909-27.111359l-0.382569 0.378318z m-172.763709-71.752858c-90.894038-90.889787-43.897616-140.462171-41.857251-142.528041L513.589785 187.186544c150.880788-150.89354 284.205929-126.200865 304.205763-115.093625a13.105098 13.105098 0 0 1-2.609967-2.099876 11.145497 11.145497 0 0 1-1.708807-2.091375c8.952104 15.715066 34.0401 154.145373-115.497447 303.674418l-146.294215 146.298467-0.191285 0.191284-0.187033 0.195535c-1.853332 1.819326-51.429966 48.815748-142.332506-42.086792z"
+                      fill="#6E6E96" p-id="2329"></path>
+                  </svg>
+                </svg></div>
+            </a></div><a class="no-underline-link collapsable-link"
+            href="https://www.notion.so/connectedpapers/Connected-Papers-Release-Notes-f758d434dfcc45e2b8ed3d0452739982#849754b8d41c40bcaa0452c8304f7b31"
+            target="_blank" data-v-56f995fd="">
+            <div id="news_button" data-v-56f995fd=""><span id="news_link" data-v-56f995fd="">
+                <trans oldtip="New" newtip="学海飞舟">学海飞舟</trans>
+              </span></div>
+          </a>
+        </div>
+        <div id="right_buttons">
+            <a href="##">
+              <img src="images/icon11.png" style="width:12px;height: 12px;">
+              分享
+            </a>
+            <a href="##">跟随</a>
+            <a href="##">关于</a>
+            <a href="##">赞助商</a>
+            <a href="##">反馈</a>
+        </div>
+      </div>
+      <div class="center">
+        <div class="font">
+          <el-main><span>Make Academia Visible</span></el-main>
+        </div>
+        <div class="search" style="width: 500px;margin: 50px auto;">
+            <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+              <el-button slot="append" icon="el-icon-search"></el-button>
+            </el-input>
+        </div>
+      </div>
+    </div>
+    <div class="chart">
+      <div class="container">
+        <div class="list">
+          <div class="icon">
+              <div class="head">
+                <img src="images/icon1.png" alt="">
+              </div>
+              <div class="data">
+                <p>321,313,685</p>
+                <p>Authors</p>
+              </div>
+          </div>
+          <div class="icon">
+            <div class="head">
+              <img src="images/icon2.png" alt="">
+            </div>
+            <div class="data">
+              <p>321,123,006</p>
+              <p>Papers</p>
+            </div>
+          </div>
+          <div class="icon">
+          <div class="head">
+            <img src="images/icon3.png" alt="">
+          </div>
+          <div class="data">
+            <p>121,433,850</p>
+            <p>Affiliation</p>
+          </div>
+          </div>
+          <div class="icon">
+        <div class="head">
+          <img src="images/icon4.png" alt="">
+        </div>
+        <div class="data">
+          <p>721,213,535</p>
+          <p>Venue</p>
+        </div>
+          </div>
+          <div class="icon">
+            <div class="head">
+              <img src="images/icon5.png" alt="">
+            </div>
+            <div class="data">
+              <p>933,313,285</p>
+              <p>Field</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div class="list">
+        <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+          <div class="title">
+            <div class="name">
+              <img src="images/icon6.png">
+              <aside>
+                <p>Top Author</p>
+                <p>in Database</p>
+                <p>Mining</p>
+              </aside>
+            </div>
+          </div>
+          <!-- <div v-for="o in 6" :key="o" class="text item" style="font-size: 14px;padding: 18px 0;">
+            {{'Journal of Knowledge' + o }}
+          </div> -->
+          <div style="display: flex;flex-direction: column;">
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">David Lo  275 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="70" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Ahmed E. Hassan 178 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="50" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Lionel C. Briand164 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="41" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Tim Menzies155 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="35" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+          </div>
+          <div class="block">
+            <el-pagination
+              layout="prev,next"
+              :total="20">
+            </el-pagination>
+          </div>
+        </el-card>
+        <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;">
+          <div class="title">
+            <div class="name">
+              <img src="images/icon13.png">
+              <aside>
+                <p>Top Affiliation</p>
+                <p>in Database</p>
+                <p>Mining</p>
+              </aside>
+            </div>
+          </div>
+          <!-- <div v-for="o in 7" :key="o" class="text item" style="font-size: 14px;padding: 18px 0;">
+            {{'Information Sciences' + o }}
+          </div> -->
+          <div style="display: flex;flex-direction: column;">
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">David Lo  275 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="70" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Ahmed E. Hassan 167 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="50" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Lionel C. Briand 155 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="41" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Tim Menzies155 Papers</el-link>
+            <el-progress :stroke-width="10" :percentage="35" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">PKU | Peking University 986</el-link>
+            <el-progress :stroke-width="10" :percentage="90" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+          </div>
+          <div class="block">
+            <el-pagination
+              layout="prev,next"
+              :total="20">
+            </el-pagination>
+          </div>
+        </el-card>
+        <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+          <div class="title">
+            <div class="name">
+              <img src="images/icon14.png">
+              <aside>
+                <p>Top Journal</p>
+                <p>in Database</p>
+                <p>Mining</p>
+              </aside>
+            </div>
+          </div>
+          <!-- <div v-for="o in 6" :key="o" class="text item" style="font-size: 14px;padding: 18px 0;">
+            {{'Philip S. Yu' + o }}
+          </div> -->
+          <div style="display: flex;flex-direction: column;">
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Software - Practice and Experience</el-link>
+            <el-progress :stroke-width="10" :percentage="100" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Journal of Systems and Software</el-link>
+            <el-progress :stroke-width="10" :percentage="80" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">IEEE Transactions on Software Engineering</el-link>
+            <el-progress :stroke-width="10" :percentage="75" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">ACM Transactions on Programming...</el-link>
+            <el-progress :stroke-width="10" :percentage="35" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+          </div>
+          <div class="block">
+            <el-pagination
+              layout="prev,next"
+              :total="20">
+            </el-pagination>
+          </div>
+        </el-card>
+        <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;">
+          <div class="title">
+            <div class="name">
+              <img src="images/icon15.png">
+              <aside>
+                <p>Conference</p>
+                <p>in Database</p>
+                <p>Mining</p>
+              </aside>
+            </div>
+          </div>
+          <!-- <div v-for="o in 7" :key="o" class="text item" style="font-size: 14px;padding: 18px 0;">
+            {{'MICROSOFT | Microsoft' + o }}
+          </div> -->
+          <div style="display: flex;flex-direction: column;">
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">ICSE</el-link>
+            <el-progress :stroke-width="10" :percentage="70" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">COMPSAC</el-link>
+            <el-progress :stroke-width="10" :percentage="60" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">CP</el-link>
+            <el-progress :stroke-width="10" :percentage="91" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">OOPSLA</el-link>
+            <el-progress :stroke-width="10" :percentage="25" style="padding-top: 15px;"></el-progress>
+            <el-link style="padding-top: 25px;display: flex;justify-content: start;">CAiSE</el-link>
+            <el-progress :stroke-width="10" :percentage="52" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+          </div>
+          <div class="block">
+            <el-pagination
+              layout="prev,next"
+              :total="20">
+            </el-pagination>
+          </div>
+        </el-card>
+      </div>
+    </div>
+    <div class="middle1">
+      <div class="entrance">
+        <div class="list">
+          <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+            <div class="right" style="float: right;">
+              <div class="top" style="background: #99c4b1;">
+                <img src="images/icon7.png" alt="">
+                <p>CCF Conference Analysis</p>
+              </div>
+              <div class="bottom">
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">GLOBECOM 2019</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">INFOCOM 2019</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">INFOCOM 2018</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">NeurIPS 2018</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">MOBICOM 2018</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;"> 
+                  <el-link href="https://element.eleme.io" target="_blank">SENSYS 2018
+                  </el-link>
+                </el-tooltip>
+              </div>
+            </div>
+          </el-card>
+          <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+            <div class="right" style="float: right;">
+              <div class="top" style="background:#f68661">
+                <img src="images/icon8.png" alt="">
+                <p>Map Galaxy</p>
+              </div>
+              <div class="bottom">
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">CS Author Map</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">CCF Compared Map</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">CCF Core-Author Map</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Field Compared Map</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">TOPIC MAP</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;"> 
+                  <el-link href="https://element.eleme.io" target="_blank">CCF Galaxy Map
+                  </el-link>
+                </el-tooltip>
+              </div>
+            </div>
+          </el-card>
+          <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+            <div class="right" style="float: right;">
+              <div class="top" style="background: #7aa2bc">
+                <img src="images/icon9.png" alt="">
+                <p>Academic Report</p>
+              </div>
+              <div class="bottom">
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Knowledge Graph: Future</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Knowledge Graph: Architecture</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Knowledge Graph: Origin</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Attention (Part2)</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Attention (Part1)</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;"> 
+                  <el-link href="https://element.eleme.io" target="_blank">Learning on Graph
+                  </el-link>
+                </el-tooltip>
+              </div>
+            </div>
+          </el-card>
+          <el-card class="box-card" style="margin: 0 10pxpx;max-width: 520px;width: 24%;height: 500px;">
+            <div class="right" style="float: right;">
+              <div class="top" style="background: #98989a">
+                <img src="images/icon10.png" alt="">
+                <p>Hot Field</p>
+              </div>
+              <div class="bottom">
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">CS Author Map</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Network and Information Securi</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Software & System Conferences Statistics</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Artificial Intelligence Conference</el-link>
+                </el-tooltip>
+                <el-tooltip class="item" effect="dark" content="提示文字" placement="right"style="width:100%;margin-top:30px;">
+                  <el-link href="https://element.eleme.io" target="_blank">Computer Network Conferences</el-link>
+                </el-tooltip>
+              </div>
+            </div>
+          </el-card>
+        </div>
+      </div>
+    </div>
+    <div class="middle2">
+      <div class="title">
+        <p>What's New</p>
+      </div>
+      <div class="news">
+        <ul>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img1.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>Hot Keywords in 2021</span>
+                    <span>Hot Keywords of CCF fields in 2021</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img4.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>Paper Similaity Check</span>
+                    <span>A free, efficient, accurate plagiarism system.</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img5.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>Paper X-Ray</span>
+                    <span>Evaluate your paper from several dimensions.</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img6.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>AceRankings</span>
+                    <span>A metric-based ranking system of top research institutions around the world.</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img7.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>NSFC Project Galaxy Map</span>
+                    <span>Project Galaxy Map</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img8.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>NSFC Institutional Migration Map</span>
+                    <span>NSFC Institutional Migration Map</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img9.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>Galaxy Album of Seminal Paper</span>
+                    <span>Hot Keywords of CCF fields in 2021</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img10.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>Hot Keywords in 2021</span>
+                    <span>Hot Keywords of CCF fields in 2021</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          <li>
+            <el-row>
+              <el-col :span="20" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                  <img src="images/img11.jpg" class="image" style="width:100%;">
+                  <div style="padding: 14px;">
+                    <span>IEEE Society Statistics</span>
+                    <span>IEEE Society paper count, hot keywords similarity and hot keywords support.</span>
+                    <div class="bottom clearfix">
+                      <time class="time">{{ currentDate }}</time>
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- 尾部 -->
+    <footer>
+      <div class="container">
+        <div class="left">
+          <img src="images/logo2.png" alt="" style="width:200px">
+          <p>Email Address</p>
+          <p>acemap@cs.sjtu.edu.cn</p>
+        </div>
+        <div class="right">
+          <div class="list">
+            <ul>
+              <li>GLOBECOM 2019</li>
+              <li>INFOCOM 2019</li>
+              <li>INFOCOM 2018</li>
+              <li>NeurIPS 2018</li>
+              <li>MOBICOM 2018</li>
+              <li>SENSYS 2018</li>
+              <li>OSDI 2018</li>
+              <li>KDD 2018</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>CS Author Map</li>
+              <li>CCF Compared Map</li>
+              <li>CCF Core-Author Map</li>
+              <li>Field Compared Map</li>
+              <li>TOPIC MAP</li>
+              <li>CCF Galaxy Map</li>
+              <li>Turing Award 50th Anniversary Map</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>Knowledge Graph: Future</li>
+              <li>Knowledge Graph: Architecture</li>
+              <li>Knowledge Graph: Origin</li>
+              <li>Attention (Part2)</li>
+              <li>Attention (Part1)</li>
+              <li>Learning on Graph</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>Hot Keywords in 2021</li>
+              <li>AceRankings</li>
+              <li>Paper Similaity Check</li>
+              <li>Paper X-Ray</li>
+              <li>NSFC Project Galaxy Map</li>
+              <li>NSFC Institutional Migration Map</li>
+              <li>Galaxy Album of Seminal Paper</li>
+              <li>IEEE Society Statistics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© Copyright 2015-2020 Acemap, Inc. Shanghai Jiao Tong University.</p>
+      </div>
+    </footer>
+	</div>
+</body>
+<script type="text/javascript" src="js/vue2.js"></script>
+<script type="text/javascript" src="element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+	el:"#app"
+	}); 
+</script>
+</html>

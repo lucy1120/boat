@@ -1,0 +1,137 @@
+div.main {
+  margin-bottom: -300px;
+  width: 100%;
+  background: #f7f8fa;
+}
+div.main div.content {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 55px;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+div.main div.content div.paper {
+  width: 100%;
+}
+div.main div.content div.paper div.papernext {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div.main div.content div.paper div.papernext div.left {
+  width: 70%;
+}
+div.main div.content div.paper div.papernext div.left h1 {
+  width: 80%;
+  line-height: 50px;
+  text-align: left;
+  color: #161616;
+  font-weight: 400;
+  font-family: brandon;
+}
+div.main div.content div.paper div.papernext div.left div.item {
+  margin-top: 15px;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-style: italic;
+  color: #a0a0a0;
+}
+div.main div.content div.paper div.papernext div.left div.item:nth-child(3) {
+  color: #83a7cf;
+}
+div.main div.content div.paper div.papernext div.left div.text {
+  margin: 20px 0;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+div.main div.content div.paper div.papernext div.left div.functions {
+  margin-top: 30px;
+  width: 80%;
+}
+div.main div.content div.paper div.papernext div.right {
+  width: 27%;
+  border-left: 1px solid #ccc;
+}
+div.main div.content div.paper div.papernext div.right .datas {
+  display: flex;
+  flex-direction: column;
+}
+div.main div.content div.paper div.papernext div.right .datas a.tip {
+  color: #777;
+  font-size: 14px;
+}
+div.main div.content div.paper div.papernext div.right .datas .data1 {
+  color: #0274b3;
+  padding: 70px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+}
+div.main div.contain1 {
+  box-sizing: border-box;
+  width: 90%;
+  height: 1550px;
+  margin: 0 auto;
+}
+div.main div.contain1 div.message {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div.main div.contain1 div.message div.left {
+  min-width: 210px;
+  width: 18%;
+}
+div.main div.contain1 div.message div.left p {
+  padding-bottom: 15px;
+}
+div.main div.contain1 div.message div.right {
+  min-width: 580px;
+  width: 80%;
+}
+div.main div.contain1 div.message div.right div.title {
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div.main div.contain1 div.message div.right div.title span {
+  display: inline-block;
+  width: 200px;
+  height: 100%;
+}
+div.main div.contain1 div.message div.right div.title div.mess {
+  display: flex;
+  justify-content: space-around;
+  width: 450px;
+  height: 100%;
+}
+div.main div.contain1 div.message div.right div.container .box-card {
+  margin-bottom: 20px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .text {
+  font-size: 14px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .item {
+  margin-bottom: 18px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:before,
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:after {
+  display: table;
+  content: "";
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:after {
+  clear: both;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .box-card {
+  width: 480px;
+}
+div.main div.contain1 div.message div.right div.container div.page {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="css/author.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="css/head.css">
+    <title>作者页</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <main>
+        <div class="logo">
+          <img src="images/logo2.png" alt="">
+        </div>
+        <div class="search" style="margin-top: 20px;width: 500px;">
+          <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+            <el-button slot="append" icon="el-icon-search"></el-button>
+          </el-input>
+        </div>
+        <div class="function">
+          <a href="##">
+            <img src="images/icon12.png" style="width:12px;height: 12px;">
+            分享
+          </a>
+          <a href="##">跟随</a>
+          <a href="##">关于</a>
+          <a href="##">赞助商</a>
+          <a href="##">反馈</a>
+        </div>
+      </main>
+      <section>
+        <div class="bread">
+          <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top: 20px;margin-left: 75px;">
+            <el-breadcrumb-item :to="{ path: '/' }"><a href="index.html">首页</a></el-breadcrumb-item>
+            <el-breadcrumb-item>作者页</el-breadcrumb-item>
+            <el-breadcrumb-item>详细信息</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+      </section>
+    </header>
+    <div class="main">
+      <div class="contain">
+        <div class="author-info">
+          <aside>
+            <el-row>
+              <el-col :span="8" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0" style="width:900px;">
+                <el-card :body-style="{ padding: '0px' }">
+                  <div class="top" style="padding: 14px;">
+                    <!-- 上 左 左 -->
+                    <div class="author-info">
+                      <div class="photo">
+                        <!-- 头像放置区 -->
+                        <template>
+                          <div class="demo-fit">
+                            <div class="block" v-for="fit in fits" :key="fit">
+                                <el-avatar shape="square" :size="100" :fit="fit" :src="url"></el-avatar>
+                            </div>
+                          </div>
+                        </template>
+                      </div>
+                      <section>
+                        <!-- 个人信息 -->
+                        <el-descriptions class="margin-top" title="无边框列表" :column="3" :size="size">
+                          <template slot="extra">
+                            <el-button type="primary" size="small">操作</el-button>
+                          </template>
+                          <el-descriptions-item label="用户名" class="name">Wang Yang</el-descriptions-item>
+                          <el-descriptions-item label="居住地" class="detail">苏州市</el-descriptions-item><br>
+                          <el-descriptions-item label="学校" class="detail">Chinese Academy of Sciences</el-descriptions-item><br>
+                          <el-descriptions-item label="联系地址" class="detail">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
+                        </el-descriptions>
+                        <!-- 信息按钮 -->
+                        <div class="buttons">
+                          <el-row>
+                            <el-button type="info" plain style="" class="btn">Computer Science</el-button>
+                            <el-button type="info" plain style="" class="btn">Artificial intelligence</el-button>
+                            <el-button type="info" plain style="" class="btn">Computer vision</el-button>
+                            <el-button type="info" plain style="" class="btn">Pattern recognition</el-button>
+                          </el-row>
+                        </div>
+                      </section>
+                    </div>
+                    <!-- 上 左 右 -->
+                    <div class="author-operation">
+                      <el-row>
+                        <el-button icon="el-icon-chat-round" circle style="width:60px;height:60px;margin-left:10px;font-size:23px;"></el-button>
+                        <el-button icon="el-icon-top-right" circle style="width:60px;height:60px;margin-left:10px;font-size:23px;"></el-button>
+                        <el-button icon="el-icon-document" circle style="width:60px;height:60px;margin-left:10px;font-size:23px;"></el-button>
+                      </el-row>
+                    </div>
+                  </div>
+                  <!-- 表格存数据 -->
+                  <div class="bottom" style="padding: 14px;">
+                    <template>
+                      <el-table
+                        :data="tableData"
+                        style="width: 100%">
+                        <el-table-column
+                          prop="papers"
+                          label="论文"
+                          width="320">
+                        </el-table-column>
+                        <el-table-column
+                          prop="citations"
+                          label="被引次数"
+                          width="320">
+                        </el-table-column>
+                        <el-table-column
+                          prop="KQI"
+                          label="KQI">
+                        </el-table-column>
+                      </el-table>
+                    </template>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </aside>
+          <section>
+            <el-row>
+              <el-col :span="15" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 1 : 0" style="width: 440px;">
+                <el-card :body-style="{ padding: '0px' }" style="height: 352px;">
+                  <div style="padding: 14px;">
+                    <span>Author Map</span>       
+                    <div class="bottom clearfix">
+                      <img src="images/img2.jpg" class="image"style="width:290px;margin-left:55px">
+                    </div>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </section>
+        </div>
+      </div>
+      <div class="contain1">
+        <div class="message">
+          <div class="left">
+            <a class="title">Filter By</a>
+            <el-card class="box-card">
+              <!-- 进度条 -->
+              <div class="block1">
+                <p>Interval</p>
+                <div class="block">
+                  <span class="demonstration">30</span>
+                  <el-slider v-model="value2"></el-slider>
+                </div>
+              </div>
+              <!-- 单选框1 -->
+              <div class="block2">
+                <p>Publication Type</p>
+                <template>
+                  <el-radio-group v-model="radio" style="display:flex;flex-direction: column;">
+                    <el-radio :label="3" class="option1">All</el-radio>
+                    <el-radio :label="4" class="option1">Journal</el-radio>
+                    <el-radio :label="5" class="option1">Conference</el-radio>
+                    <el-radio :label="6" class="option1">BookChapter</el-radio>
+                    <el-radio :label="6" class="option1">Book</el-radio>
+                    <el-radio disabled v-model="radio" label="禁用" class="option1">Other</el-radio>
+                  </el-radio-group>
+                </template>
+              </div>
+              <!-- 标签 -->
+              <div class="block3">
+                <p>Author</p>
+                <div class="list">
+                  <el-tag type="info" class="tip1">Wen Gao(1232)</el-tag>
+                  <el-tag type="info" class="tip1">Siwei Ma</el-tag>
+                  <el-tag type="info" class="tip1">Debin Zhao</el-tag>
+                  <el-tag type="info" class="tip1">Tiejun(652)</el-tag>
+                  <el-tag type="info" class="tip1">Shiqi</el-tag>
+                  <el-tag type="info" class="tip1">Ling-Yu(3123)</el-tag>
+                </div>
+              </div>
+              <!-- 多选框1 -->
+              <div class="block4">
+                <p>Conferences</p>
+                <template>
+                  <el-checkbox-group v-model="checkList" style="display: flex;flex-direction: column;">
+                    <el-checkbox label="IEEE Transactions" class="option1"></el-checkbox>
+                    <el-checkbox label="Lecture Notes" class="option1"></el-checkbox>
+                    <el-checkbox label="arXiv" class="option1"></el-checkbox>
+                    <el-checkbox label="Pattern" class="option1"></el-checkbox>
+                    <el-checkbox label="Journal" class="option1"></el-checkbox>
+                    <el-checkbox label="Journal of Visual" class="option1"></el-checkbox>
+                    <el-checkbox label="Signal" class="option1"></el-checkbox>
+                    <el-checkbox label="Tiejun" class="option1"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </div>
+              <!-- 单选框2 -->
+              <div class="block5">
+                <p>Journals</p>
+                <template>
+                  <el-radio-group v-model="radio" style="display:flex;flex-direction: column;">
+                    <el-radio :label="3" class="option1">ICIP</el-radio>
+                    <el-radio :label="4" class="option1">ICME</el-radio>
+                    <el-radio :label="5" class="option1">VCIP</el-radio>
+                    <el-radio :label="6" class="option1">DCC</el-radio>
+                    <el-radio :label="6" class="option1">ICPR</el-radio>
+                    <el-radio disabled v-model="radio" label="禁用" class="option1">PCM</el-radio>
+                  </el-radio-group>
+                </template>
+              </div>
+            </el-card>
+           </div>
+          <div class="right">
+            <!-- 标题 -->
+            <div class="title">
+              <span>Papers (1689)</span>
+              <div class="mess">
+                <span>Sort By</span>
+                <!-- 下拉列表 -->
+                <div class="select" style="margin-right: 25px;">
+                  <template>
+                    <el-select v-model="value" placeholder="请选择">
+                      <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                      </el-option>
+                    </el-select>
+                  </template>
+                </div>
+                <!-- 图标 -->
+                <el-row style="display: flex;height: 10px;margin-top: 10px;">
+                  <el-button type="primary" circle></el-button>
+                  <el-button type="info" circle></el-button>
+                  <el-button type="danger" circle></el-button>
+                </el-row>
+              </div>
+            </div>
+            <!-- 内容板块 -->
+            <div class="container">
+              <el-card class="box-card">
+                <div class="top">
+                  <div slot="header" class="clearfix">
+                    <span>[J646]</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                  </div>
+                  <div v-for="o in 4" :key="o" class="text item">
+                    {{'Biomedical Signal Processing and Control'+o}}
+                  </div>
+                </div>
+              </el-card>
+              <el-card class="box-card">
+                <div class="top">
+                  <div slot="header" class="clearfix">
+                    <span>[O146]</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                  </div>
+                  <div v-for="o in 4" :key="o" class="text item">
+                    {{'Command2Vec: Feature Learning of 3D Modeling Behavior Sequence—A Case Study on “Spiral-stair” ' + o }}
+                  </div>
+                </div>
+              </el-card>
+              <el-card class="box-card">
+                <div class="top">
+                  <div slot="header" class="clearfix">
+                    <span>[C897]</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                  </div>
+                  <div v-for="o in 4" :key="o" class="text item">
+                    {{'Towards Analysis-friendly Face Representation with Scalable Feature and Texture Compression ' + o }}
+                  </div>
+                </div>
+              </el-card>
+              <el-card class="box-card">
+                <div class="top">
+                  <div slot="header" class="clearfix">
+                    <span>[J645]</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                  </div>
+                  <div v-for="o in 4" :key="o" class="text item">
+                    {{'Post-Training Quantization for Vision Transformer' + o }}
+                  </div>
+                </div>
+              </el-card>
+              <el-card class="box-card">
+                <div class="top">
+                  <div slot="header" class="clearfix">
+                    <span>[J644]</span>
+                    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                  </div>
+                  <div v-for="o in 4" :key="o" class="text item">
+                    {{'Driver Stress Detection via Multimodal Fusion Using Attention-based CNN-LSTM' + o }}
+                  </div>
+                </div>
+              </el-card>
+              <div class="page">
+                <el-pagination
+                  background
+                  layout="prev, pager, next"
+                  :total="1000">
+                </el-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="left">
+          <img src="images/logo2.png" alt="" style="width:200px">
+          <p>Email Address</p>
+          <p>acemap@cs.sjtu.edu.cn</p>
+        </div>
+        <div class="right">
+          <div class="list">
+            <ul>
+              <li>GLOBECOM 2019</li>
+              <li>INFOCOM 2019</li>
+              <li>INFOCOM 2018</li>
+              <li>NeurIPS 2018</li>
+              <li>MOBICOM 2018</li>
+              <li>SENSYS 2018</li>
+              <li>OSDI 2018</li>
+              <li>KDD 2018</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>CS Author Map</li>
+              <li>CCF Compared Map</li>
+              <li>CCF Core-Author Map</li>
+              <li>Field Compared Map</li>
+              <li>TOPIC MAP</li>
+              <li>CCF Galaxy Map</li>
+              <li>Turing Award 50th Anniversary Map</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>Knowledge Graph: Future</li>
+              <li>Knowledge Graph: Architecture</li>
+              <li>Knowledge Graph: Origin</li>
+              <li>Attention (Part2)</li>
+              <li>Attention (Part1)</li>
+              <li>Learning on Graph</li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>Hot Keywords in 2021</li>
+              <li>AceRankings</li>
+              <li>Paper Similaity Check</li>
+              <li>Paper X-Ray</li>
+              <li>NSFC Project Galaxy Map</li>
+              <li>NSFC Institutional Migration Map</li>
+              <li>Galaxy Album of Seminal Paper</li>
+              <li>IEEE Society Statistics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© Copyright 2015-2020 Acemap, Inc. Shanghai Jiao Tong University.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+<script type="text/javascript" src="js/vue2.js"></script>
+<script type="text/javascript" src="element-ui/lib/index.js"></script>
+<script>
+  
+  new Vue({
+	el:"#app",
+  data () {
+      return {
+        radio: 3,
+        checkList: ['选中且禁用','复选框 A'],
+        value1: 0,
+        value2: 50,
+        value3: 36,
+        value4: 48,
+        value5: 42,
+        options: [{
+          value: '选项1',
+          label: 'Default'
+        }, {
+          value: '选项2',
+          label: 'Most Recent'
+        }, {
+          value: '选项3',
+          label: 'Most Early'
+        }, {
+          value: '选项4',
+          label: 'Most Citation'
+        }],
+        value: '',
+        fits: ['fill'],
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        tableData: [{
+            papers: '1689',
+            citations: '32453',
+            KQI: '4342'
+          }]
+      };
+    },
+    methods: {
+      formatTooltip(val) {
+        return val / 100;
+      }
+    }
+	}); 
+</script>
+</html>

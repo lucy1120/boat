@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="css/top.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="css/head.css">
+    <title>顶刊收录页</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <main>
+              <div class="logo">
+                <img src="images/logo2.png" alt="">
+              </div>
+              <div class="search" style="margin-top: 20px;width: 500px;">
+                <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+                  <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+              </div>
+              <div class="function">
+                <a href="##">
+                  <img src="images/icon12.png" style="width:12px;height: 12px;">
+                  分享
+                </a>
+                <a href="##">跟随</a>
+                <a href="##">关于</a>
+                <a href="##">赞助商</a>
+                <a href="##">反馈</a>
+              </div>
+            </main>
+            <section>
+              <div class="bread">
+                <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top: 20px;margin-left: 75px;">
+                  <el-breadcrumb-item :to="{ path: '/' }"><a href="index.html">首页</a></el-breadcrumb-item>
+                  <el-breadcrumb-item>顶刊收录页</el-breadcrumb-item>
+                  <el-breadcrumb-item>详细信息</el-breadcrumb-item>
+                </el-breadcrumb>
+              </div>
+            </section>
+        </header>
+        <div class="main">
+            <div class="info">
+                <div class="left">
+                    <el-card :body-style="{ padding: '0px' }">
+                        <div class="box">
+                            <div class="top">
+                                <div class="el-icon-user-solid" style="font-size: 55px;color: rgb(107, 183, 241);"></div>
+                                <div class="title1">
+                                    <h2 style="width: 354px;">Chinese Academy of Sciences</h2>
+                                    <el-button icon="el-icon-star-off" circle style="width: 50px;height: 50px;"></el-button>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <template>
+                                    <el-table
+                                      :data="tableData"
+                                      stripe
+                                      style="width: 100%">
+                                      <el-table-column
+                                        prop="Authors"
+                                        label="Papers"
+                                        width="180">
+                                      </el-table-column>
+                                      <el-table-column
+                                        prop="Count"
+                                        label="Citations"
+                                        width="180">
+                                      </el-table-column>
+                                      <el-table-column
+                                        prop="Citation"
+                                        label="H-index">
+                                      </el-table-column>
+                                    </el-table>
+                                  </template>
+                            </div>
+                        </div>
+                    </el-card>
+                </div>  
+                <div class="right">
+                    <el-card :body-style="{ padding: '0px' }" style="height: 100%">
+                        <div class="top">
+                            <div class="el-icon-tickets"></div>
+                            Keywords
+                        </div>
+                        <div class="bottom">
+                            <el-link class="line" style="padding-top: 15px;">Physics</el-link>
+                            <el-link class="line">Acoustics</el-link>
+                            <el-link class="line">Optics</el-link>
+                            <el-link class="line">Amplitude</el-link>
+                            <el-link class="line">Mathematics</el-link>
+                        </div>
+                    </el-card>
+                </div>  
+            </div>
+            <div class="module">
+              <div class="box">
+                <div class="list">
+                  <ul>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p> H-index Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>Paper Amount Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url1" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p> Citation Amount Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url2" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p> New Citation from Top 30 Scholar Statistic</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url3" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>Rank institutions</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url4" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="list">
+                <div class="operation">
+                    <div class="time">
+                      Rank time
+                      <el-select v-model="value1" multiple placeholder="请选择" style="margin-right:15px;margin-left: 15px;">
+                        <el-option
+                          v-for="item in options"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value" >
+                        </el-option>
+                      </el-select>
+                      to
+                      <el-select
+                        v-model="value2"
+                        multiple
+                        collapse-tags
+                        style="margin-left: 15px;margin-right:15px;"
+                        placeholder="请选择">
+                        <el-option
+                          v-for="item in options"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
+                    </div>
+                    <div class="author">
+                      All/First author
+                      <template>
+                        <el-select v-model="value" placeholder="All Authors" style="margin-left: 15px;">
+                          <el-option
+                            v-for="item in options1"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                          </el-option>
+                        </el-select>
+                      </template>
+                    </div>
+                </div>
+                <div class="text">
+                    <template>
+                        <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+                          <el-tab-pane label="Institution List" name="first">
+                            <template>
+                                <el-table
+                                  :data="tableData"
+                                  stripe
+                                  style="width: 100%">
+                                  <el-table-column
+                                    prop="Authors"
+                                    label="Authors"
+                                    width="180">
+                                  </el-table-column>
+                                  <el-table-column
+                                    prop="Count"
+                                    label="Count"
+                                    width="180">
+                                  </el-table-column>
+                                  <el-table-column
+                                    prop="Citation"
+                                    label="Citation">
+                                  </el-table-column>
+                                </el-table>
+                              </template>
+                          </el-tab-pane>
+                          <el-tab-pane label="Top Authors in All" name="second">
+                            <template>
+                                <el-table
+                                  :data="tableData"
+                                  stripe
+                                  style="width: 100%">
+                                  <el-table-column
+                                    prop="Authors"
+                                    label="Authors"
+                                    width="180">
+                                  </el-table-column>
+                                  <el-table-column
+                                    prop="Count"
+                                    label="Count"
+                                    width="180">
+                                  </el-table-column>
+                                  <el-table-column
+                                    prop="Citation"
+                                    label="Citation">
+                                  </el-table-column>
+                                </el-table>
+                              </template>
+                          </el-tab-pane>
+                        </el-tabs>
+                      </template>
+                </div>
+            </div>
+            <div class="contain1">
+                <div class="message">
+                  <div class="left">
+                    <a class="title">Filter By</a>
+                    <el-card class="box-card">
+                      <!-- 标签 -->
+                      <div class="block3">
+                        <p>Author</p>
+                        <div class="list">
+                          <el-tag type="info" class="tip1">Philip L. Marston(425)</el-tag>
+                          <el-tag type="info" class="tip1">Brian C. J. Moore(363)</el-tag>
+                          <el-tag type="info" class="tip1">Kent L. Gee(321)</el-tag>
+                          <el-tag type="info" class="tip1">Lawrence A. Crum(315)</el-tag>
+                          <el-tag type="info" class="tip1">Mark F. Hamilton(277)</el-tag>
+                          <el-tag type="info" class="tip1">W. A. Kuperman(274)</el-tag>
+                        </div>
+                      </div>
+                      <!-- 多选框1 -->
+                      <div class="block4">
+                        <p>Conferences</p>
+                        <template>
+                          <el-checkbox-group v-model="checkList" style="display: flex;flex-direction: column;">
+                            <el-checkbox label="Physics" class="option1"></el-checkbox>
+                            <el-checkbox label="Acoustics" class="option1"></el-checkbox>
+                            <el-checkbox label="Optics" class="option1"></el-checkbox>
+                            <el-checkbox label="Amplitude" class="option1"></el-checkbox>
+                            <el-checkbox label="Perception" class="option1"></el-checkbox>
+                            <el-checkbox label="Vibration" class="option1"></el-checkbox>
+                            <el-checkbox label="Scattering" class="option1"></el-checkbox>
+                            <el-checkbox label="Classical mechanics" class="option1"></el-checkbox>
+                          </el-checkbox-group>
+                        </template>
+                      </div> 
+                      <!-- 多选框1 -->
+                      <div class="block5">
+                        <p>Affiliations</p>
+                        <template>
+                          <el-checkbox-group v-model="checkList" style="display: flex;flex-direction: column;">
+                            <el-checkbox label="UW" class="option1"></el-checkbox>
+                            <el-checkbox label="UCSD" class="option1"></el-checkbox>
+                            <el-checkbox label="UMN" class="option1"></el-checkbox>
+                            <el-checkbox label="UIUC" class="option1"></el-checkbox>
+                            <el-checkbox label="PSU" class="option1"></el-checkbox>
+                            <el-checkbox label="SIEMENS" class="option1"></el-checkbox>
+                            <el-checkbox label="UTEXAS" class="option1"></el-checkbox>
+                            <el-checkbox label="NU" class="option1"></el-checkbox>
+                          </el-checkbox-group>
+                        </template>
+                      </div> 
+                    </el-card>
+                   </div>
+                  <div class="right">
+                    <!-- 标题 -->
+                    <div class="title">
+                      <span>Papers (1689)</span>
+                      <div class="mess">
+                        <span>Sort By</span>
+                        <!-- 下拉列表 -->
+                        <div class="select" style="margin-right: 25px;">
+                          <template>
+                            <el-select v-model="value" placeholder="请选择">
+                              <el-option
+                                v-for="item in options2"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                              </el-option>
+                            </el-select>
+                          </template>
+                        </div>
+                        <!-- 图标 -->
+                        <el-row style="display: flex;height: 10px;margin-top: 10px;">
+                          <el-button type="primary" circle></el-button>
+                          <el-button type="info" circle></el-button>
+                          <el-button type="danger" circle></el-button>
+                        </el-row>
+                      </div>
+                    </div>
+                    <!-- 内容板块 -->
+                    <div class="container">
+                      <el-card class="box-card">
+                        <div class="top" style="text-align: left;">
+                          <div slot="header" class="clearfix">
+                            <span>Spherical oscillations of encapsulated microbubbles: Effect of shell compressibility and anisotropy</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">详情</el-button>
+                          </div>
+                          <div style="display: flex;flex-direction: column;">
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">David Lo  275 Papers</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Lionel C. Briand164 Papers</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Tim Menzies155 Papers</el-link>
+                            <el-progress :stroke-width="10" :percentage="35" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+                          </div>
+                          <!-- <div v-for="o in 4" :key="o" class="text item">
+                            {{'列表内容 ' + o }}
+                          </div> -->
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top" style="text-align: left;">
+                          <div slot="header" class="clearfix">
+                            <span>Closed-aperture unbounded acoustics experimentation using multidimensional deconvolution.</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">详情</el-button>
+                          </div>
+                          <div style="display: flex;flex-direction: column;">
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">David Lo  275 Papers</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Lionel C. Briand 155 Papers</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Tim Menzies155 Papers</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">PKU | Peking University 986</el-link>
+                            <el-progress :stroke-width="10" :percentage="90" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+                          </div>
+                          <!-- <div v-for="o in 4" :key="o" class="text item">
+                            {{'列表内容 ' + o }}
+                          </div> -->
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top" style="text-align: left;">
+                          <div slot="header" class="clearfix">
+                            <span>Closed-aperture unbounded acoustics experimentation using multidimensional deconvolution.</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">详情</el-button>
+                          </div>
+                          <div style="display: flex;flex-direction: column;">
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Software - Practice and Experience</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">IEEE Transactions on Software Engineering</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">ACM Transactions on Programming...</el-link>
+                            <el-progress :stroke-width="10" :percentage="35" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+                          </div>
+                          <!-- <div v-for="o in 4" :key="o" class="text item">
+                            {{'列表内容 ' + o }}
+                          </div> -->
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top" style="text-align: left;">
+                          <div slot="header" class="clearfix">
+                            <span>Engineering three-dimensional labyrinthine fractal acoustic metamaterials with low-frequency multi-band sound suppre</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">详情</el-button>
+                          </div>
+                          <div style="display: flex;flex-direction: column;">
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">ICSE</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">COMPSAC</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">OOPSLA</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">CAiSE</el-link>
+                            <el-progress :stroke-width="10" :percentage="52" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+                          </div>
+                          <!-- <div v-for="o in 4" :key="o" class="text item">
+                            {{'列表内容 ' + o }}
+                          </div> -->
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top" style="text-align: left;">
+                          <div slot="header" class="clearfix">
+                            <span>Shear wave dispersion analysis of incompressible waveguides.</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">详情</el-button>
+                          </div>
+                          <div style="display: flex;flex-direction: column;">
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Mechanics</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">2021  Journal of the Acoustical Society of America</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">A suite of methodologies is presented to compute shear wave dispersion in incompressible waveguides encountered in biomedical imaging</el-link>
+                            <el-link style="padding-top: 25px;display: flex;justify-content: start;">Waveguide</el-link>
+                            <el-progress :stroke-width="10" :percentage="82" style="padding-top: 15px;margin-bottom: 10px;"></el-progress>
+                          </div>
+                          <!-- <div v-for="o in 4" :key="o" class="text item">
+                            {{'列表内容 ' + o }}
+                          </div> -->
+                        </div>
+                      </el-card>
+                      <div class="page">
+                        <el-pagination
+                          background
+                          layout="prev, pager, next"
+                          :total="1000">
+                        </el-pagination>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+          <div class="container">
+            <div class="left">
+              <img src="images/logo2.png" alt="" style="width:200px">
+              <p>Email Address</p>
+              <p>acemap@cs.sjtu.edu.cn</p>
+            </div>
+            <div class="right">
+              <div class="list">
+                <ul>
+                  <li>GLOBECOM 2019</li>
+                  <li>INFOCOM 2019</li>
+                  <li>INFOCOM 2018</li>
+                  <li>NeurIPS 2018</li>
+                  <li>MOBICOM 2018</li>
+                  <li>SENSYS 2018</li>
+                  <li>OSDI 2018</li>
+                  <li>KDD 2018</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>CS Author Map</li>
+                  <li>CCF Compared Map</li>
+                  <li>CCF Core-Author Map</li>
+                  <li>Field Compared Map</li>
+                  <li>TOPIC MAP</li>
+                  <li>CCF Galaxy Map</li>
+                  <li>Turing Award 50th Anniversary Map</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Knowledge Graph: Future</li>
+                  <li>Knowledge Graph: Architecture</li>
+                  <li>Knowledge Graph: Origin</li>
+                  <li>Attention (Part2)</li>
+                  <li>Attention (Part1)</li>
+                  <li>Learning on Graph</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Hot Keywords in 2021</li>
+                  <li>AceRankings</li>
+                  <li>Paper Similaity Check</li>
+                  <li>Paper X-Ray</li>
+                  <li>NSFC Project Galaxy Map</li>
+                  <li>NSFC Institutional Migration Map</li>
+                  <li>Galaxy Album of Seminal Paper</li>
+                  <li>IEEE Society Statistics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>© Copyright 2015-2020 Acemap, Inc. Shanghai Jiao Tong University.</p>
+          </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue2.js"></script>
+<script type="text/javascript" src="element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+      el:"#app",
+      data() {
+      return {
+        radio: 3,
+        checkList: ['选中且禁用','复选框 A'],
+        //点击查看大图
+        url:'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+        url1:'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        url2:'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+        url3:'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+        url4:'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+        srcList: [
+          'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+          'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+          'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+          'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+          'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg'
+        ],
+        //select选择器数据 双选
+        options: [{
+          value: '选项1',
+          label: '2016'
+        }, {
+          value: '选项2',
+          label: '2017'
+        }, {
+          value: '选项3',
+          label: '2018'
+        }, {
+          value: '选项4',
+          label: '2019'
+        }, {
+          value: '选项5',
+          label: '2020'
+        }, {
+          value: '选项6',
+          label: '2021'
+        }, {
+          value: '选项7',
+          label: '2022'
+        }],
+        value1: [],
+        value2: [],
+        //select选择器数据 单选
+        options1: [{
+            value: '选项1',
+            label: 'All Authors'
+          }, {
+            value: '选项2',
+            label: 'First Author'
+          }],
+          value: '',
+          options2: [{
+          value: '选项1',
+          label: '1'
+          }, {
+            value: '选项2',
+            label: '2'
+          }, {
+            value: '选项3',
+            label: '3'
+          }, {
+            value: '选项4',
+            label: '4'
+          }, {
+            value: '选项5',
+            label: '5'
+          }],
+        value: '',
+        activeName: 'first',
+        tableData: [{
+            Authors: 'Bob',
+            Count: '12',
+            Citation: '1009'
+        }, {
+            Authors: 'Tom',
+            Count: '43',
+            Citation: '336'
+        }, {
+            Authors: 'Jancy',
+            Count: '64',
+            Citation: '522'
+        }, {
+            Authors: 'Jane',
+            Count: '87',
+            Citation: '7422'
+        }]
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+      }); 
+</script>
+</html>

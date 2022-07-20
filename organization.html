@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="css/organization.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="css/head.css">
+    <title>机构页</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <main>
+              <div class="logo">
+                <img src="images/logo2.png" alt="">
+              </div>
+              <div class="search" style="margin-top: 20px;width: 500px;">
+                <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+                  <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+              </div>
+              <div class="function">
+                <a href="##">
+                  <img src="images/icon12.png" style="width:12px;height: 12px;">
+                  分享
+                </a>
+                <a href="##">跟随</a>
+                <a href="##">关于</a>
+                <a href="##">赞助商</a>
+                <a href="##">反馈</a>
+              </div>
+            </main>
+            <section>
+              <div class="bread">
+                <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top: 20px;margin-left: 75px;">
+                  <el-breadcrumb-item :to="{ path: '/' }"><a href="index.html">首页</a></el-breadcrumb-item>
+                  <el-breadcrumb-item>机构页</el-breadcrumb-item>
+                  <el-breadcrumb-item>详细信息</el-breadcrumb-item>
+                </el-breadcrumb>
+              </div>
+            </section>
+        </header>
+        <div class="container">
+            <div class="top">
+                <div class="left">
+                  <el-card class="box-card">
+                    <div class="box">
+                      <div class="img">
+                        <img src="images/img3.jpg" alt="" style="width: 120px;">
+                      </div>
+                      <div class="info">
+                        <div class="title1">
+                          <h1>Chinese Academy of Sciences</h1>
+                          <el-button icon="el-icon-star-off" circle style="width: 50px;height: 50px;margin-top: 20px;"></el-button>
+                        </div>
+                        <div class="title2">
+                          The Chinese Academy of Sciences (CAS; Chinese: 中国科学院), with historical origins in the Academia Sinica during the Republican era and formerly also known by that name, is the national academy for the natural sciences of the People's Republic of China (PRC). Collectively known as the 'Two Academies (两院)' along with the Chinese Academy of Engineering, it is an institution of China, functioning as the national scientific think tank and academic governing body, providing advisory and appraisal services on issues stemming from the national economy, social development, and science and technology progress.  It is headquartered in Xicheng District, Beijing, with branch institutes all over mainland China.  It has also created hundreds of commercial enterprises, Lenovo being one of the most famous.
+                          It is the world's largest research organisation, comprising around 60,000 researchers working in 114 institutes, and has been consistently ranked among the top research organisations around the world.
+                          The Chinese Academy of Sciences was ranked the No. 1 research institute in the world by Nature Publishing Index 2017, by Nature Publishing Group.
+                        </div>
+                        <div class="title3">
+                          <el-button type="primary">官方网站</el-button>
+                          <el-button type="primary">查看所有论文</el-button>
+                        </div>
+                      </div>
+                    </div>
+                  </el-card>
+                </div>
+                <div class="right">
+                  <el-card class="box-card" style="height: 334px;">
+                    <div class="box">
+                      <template>
+                        <el-table
+                          :data="tableData"
+                          style="width: 100%;">
+                          <el-table-column 
+                            style="width: 40%;
+                            min-width: 120px;
+                            color: #595959;
+                            font-size: 20px;
+                            text-align: center;"
+                            prop="date"
+                            label="数值统计"
+                            width="180">
+                          </el-table-column>
+                          <el-table-column
+                            style="width: 58%;
+                            color: #0274b3;
+                            font-size: 30px;
+                            text-align: center;"
+                            prop="name"
+                            label=""
+                            width="180">
+                          </el-table-column>
+                        </el-table>
+                      </template>
+                    </div>
+                  </el-card>
+                </div>
+            </div>
+            <div class="module">
+              <div class="box">
+                <div class="list">
+                  <ul>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>Paper Amount Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>H-index Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url1" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>Paper Amount Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url2" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>Citation Amount Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url3" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                    <li>
+                      <el-row>
+                          <el-card :body-style="{ padding: '0px' }" style="width: 450px;margin-top: 5px;height: 300px">
+                            <div style="padding: 14px;display: flex;">
+                              <div class="el-icon-tickets" style="font-size: 20px;"></div>
+                              <p>New Citation from Top 30 Scholar Statistics</p>
+                              <div class="bottom clearfix">
+                                <time class="time">{{ currentDate }}</time>
+                              </div>
+                            </div>
+                            <!-- 大图预览 -->
+                            <el-image 
+                            style="width: 100%; height: 100%"
+                            :src="url4" 
+                            :preview-src-list="srcList">
+                          </el-image>
+                          </el-card>
+                      </el-row>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="end">
+              <div class="head">
+                <!-- 单选按钮 -->
+                <div class="buttons">
+                  <el-radio-group v-model="radio1">
+                    <el-radio-button label="CCF" style="margin-left: 20px;margin-top: 20px;"></el-radio-button>
+                    <el-radio-button label="THU"style="margin-left: 20px;margin-top: 20px;"></el-radio-button>
+                    <el-radio-button label="IEEE Society"style="margin-left: 20px;margin-top: 20px;"></el-radio-button>
+                    <el-radio-button label="SCI"style="margin-left: 20px;margin-top: 20px;"></el-radio-button>
+                    <el-radio-button label="ACMSIG"style="margin-left: 20px;margin-top: 20px;"></el-radio-button>
+                  </el-radio-group>
+                </div>
+                <div class="operation">
+                  <div class="time">
+                    Rank time
+                    <el-select v-model="value1" multiple placeholder="请选择" style="margin-right:15px;margin-left: 15px;">
+                      <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value" >
+                      </el-option>
+                    </el-select>
+                    to
+                    <el-select
+                      v-model="value2"
+                      multiple
+                      collapse-tags
+                      style="margin-left: 15px;margin-right:15px;"
+                      placeholder="请选择">
+                      <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                      </el-option>
+                    </el-select>
+                  </div>
+                  <div class="author">
+                    All/First author
+                    <template>
+                      <el-select v-model="value" placeholder="All Authors" style="margin-left: 15px;">
+                        <el-option
+                          v-for="item in options1"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
+                    </template>
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <div class="left">
+                  <el-card class="box-card">
+                    <!-- 树节点的选取 -->
+                    <el-tree
+                    :data="data"
+                    show-checkbox
+                    default-expand-all
+                    node-key="id"
+                    ref="tree"
+                    highlight-current
+                    :props="defaultProps">
+                  </el-tree>
+                  </el-card>
+                </div>
+                <div class="right">
+                  <el-card class="box-card">
+                    <div class="title">
+                      <div class="box">
+                        <div class="el-icon-document" style="font-size: 25px;"></div>
+                        <a>Top Author in Chinese Academy of Sciences</a>
+                      </div>
+                    </div>
+                    <div class="message">
+                      <!-- 放置表格 -->
+                      <template>
+                        <el-table
+                          :data="tableData"
+                          stripe
+                          style="width: 100%">
+                          <el-table-column
+                            prop="date"
+                            label="类别"
+                            width="180">
+                          </el-table-column>
+                          <el-table-column
+                            prop="name"
+                            label="数值1"
+                            width="180">
+                          </el-table-column>
+                          <el-table-column
+                            prop="Citations"
+                            label="数值2">
+                          </el-table-column>
+                        </el-table>
+                      </template>
+                      <!-- 放置对应的数据图像  css中暂定为300px高度给予填充-->
+                      <div class="detail" style="padding: 10px;text-indent: 2em;text-align: left;">
+                        This paper presents an overview of the emerging area of collaborative intelligence 
+                        (CI). Our goal is to raise awareness in the signal processing community of the challenges 
+                        and opportunities in this area of growing importance, where key developments are expected 
+                        to come from signal processing and related disciplines. The paper surveys the current state of 
+                        the art in CI, with special emphasis on signal processing-related challenges in feature compres
+                        sion, error resilience, privacy, and system-level design.
+                        Video Coding for Machines (VCM) is committed to bridging to an extent separate re
+                        search tracks of video/image compression and feature compression, and attempts to opt
+                        imize compactness and efficiency jointly from a unified perspective of high accuracy machine
+                         vision and full fidelity human vision. In this paper, we summarize VCM methodology and philosop
+                         hy based on existing academia and industrial efforts. The development of VCM follows a general rate-di
+                         stortion optimization, and the categorization of key modules or techniques is established. From previous wo
+                         rks, it is demonstrated that, although existing works attempt to reveal the nature of scalable representation 
+                         in bits when dealing with machine and human vision tasks, there remains a rare study in the generality of low bi
+                         t rate representation, and accordingly how to support a variety of visual analytic tasks. Therefore, we investigat
+                         e a novel visual information compression for the analytics taxonomy problem to strengthen the capability of 
+                         compact visual representations extracted from multiple tasks for visual analytics. A new perspective of task relationshi
+                         ps versus compression is revisited. By keeping in mind the transferability among different machine vision tasks.
+                      </div>
+                      <template style="width: 100%;
+                      height: 1000px;
+                      overflow-y: auto;">
+                        <el-table
+                          :data="tableData"
+                          stripe
+                          style="width: 100%">
+                          <el-table-column
+                            prop="date"
+                            label="类别"
+                            width="180">
+                          </el-table-column>
+                          <el-table-column
+                            prop="name"
+                            label="数值1"
+                            width="180">
+                          </el-table-column>
+                          <el-table-column
+                            prop="Citations"
+                            label="数值2">
+                          </el-table-column>
+                        </el-table>
+                      </template>
+                    </div>
+                  </el-card>
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer>
+          <div class="container">
+            <div class="left">
+              <img src="images/logo2.png" alt="" style="width:200px">
+              <p>Email Address</p>
+              <p>acemap@cs.sjtu.edu.cn</p>
+            </div>
+            <div class="right">
+              <div class="list">
+                <ul>
+                  <li>GLOBECOM 2019</li>
+                  <li>INFOCOM 2019</li>
+                  <li>INFOCOM 2018</li>
+                  <li>NeurIPS 2018</li>
+                  <li>MOBICOM 2018</li>
+                  <li>SENSYS 2018</li>
+                  <li>OSDI 2018</li>
+                  <li>KDD 2018</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>CS Author Map</li>
+                  <li>CCF Compared Map</li>
+                  <li>CCF Core-Author Map</li>
+                  <li>Field Compared Map</li>
+                  <li>TOPIC MAP</li>
+                  <li>CCF Galaxy Map</li>
+                  <li>Turing Award 50th Anniversary Map</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Knowledge Graph: Future</li>
+                  <li>Knowledge Graph: Architecture</li>
+                  <li>Knowledge Graph: Origin</li>
+                  <li>Attention (Part2)</li>
+                  <li>Attention (Part1)</li>
+                  <li>Learning on Graph</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Hot Keywords in 2021</li>
+                  <li>AceRankings</li>
+                  <li>Paper Similaity Check</li>
+                  <li>Paper X-Ray</li>
+                  <li>NSFC Project Galaxy Map</li>
+                  <li>NSFC Institutional Migration Map</li>
+                  <li>Galaxy Album of Seminal Paper</li>
+                  <li>IEEE Society Statistics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>© Copyright 2015-2020 Acemap, Inc. Shanghai Jiao Tong University.</p>
+          </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue2.js"></script>
+<script type="text/javascript" src="element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+	el:"#app",
+  data () {
+      return {
+        //树型选择
+        methods: {
+          getCheckedNodes() {
+            console.log(this.$refs.tree.getCheckedNodes());
+          },
+          getCheckedKeys() {
+            console.log(this.$refs.tree.getCheckedKeys());
+          },
+          setCheckedNodes() {
+            this.$refs.tree.setCheckedNodes([{
+              id: 5,
+              label: '二级 2-1'
+            }, {
+              id: 9,
+              label: '三级 1-1-1'
+            }]);
+          },
+          setCheckedKeys() {
+            this.$refs.tree.setCheckedKeys([3]);
+          },
+          resetChecked() {
+            this.$refs.tree.setCheckedKeys([]);
+          }
+        },
+        //点击查看大图
+        url:'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+        url1:'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+        url2:'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+        url3:'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+        url4:'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+        srcList: [
+          'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+          'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
+          'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+          'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+          'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg'
+        ],
+        //表格数据
+        tableData: [{
+            date: '论文数',
+            name: '634,867', 
+            Citations:'232' 
+          }, {
+            date: '学者数',
+            name: '245,015',  
+            Citations:'715'  
+          }, {
+            date: '被引次数',
+            name: '12,289,253',   
+            Citations:'146'     
+          }],
+          //单击按钮数据
+          radio1: 'CCF',
+          radio2: 'CCF',
+          radio3: 'CCF',
+          radio4: 'CCF',
+          radio4: 'CCF',
+          //select选择器数据 双选
+          options: [{
+          value: '选项1',
+          label: '2016'
+        }, {
+          value: '选项2',
+          label: '2017'
+        }, {
+          value: '选项3',
+          label: '2018'
+        }, {
+          value: '选项4',
+          label: '2019'
+        }, {
+          value: '选项5',
+          label: '2020'
+        }, {
+          value: '选项6',
+          label: '2021'
+        }, {
+          value: '选项7',
+          label: '2022'
+        }],
+          value1: [],
+          value2: [],
+         //select选择器数据 单选
+          options1: [{
+            value: '选项1',
+            label: 'All Authors'
+          }, {
+            value: '选项2',
+            label: 'First Author'
+          }],
+          value: '',
+          //树型的选择
+          data: [{
+          id: 1,
+          label: '一级 1',
+          children: [{
+            id: 4,
+            label: '二级 1-1',
+            children: [{
+              id: 9,
+              label: '三级 1-1-1'
+            }, {
+              id: 10,
+              label: '三级 1-1-2'
+            }]
+          }]
+        }, {
+          id: 2,
+          label: '一级 2',
+          children: [{
+            id: 5,
+            label: '二级 2-1'
+          }, {
+            id: 6,
+            label: '二级 2-2'
+          }]
+        }, {
+          id: 3,
+          label: '一级 3',
+          children: [{
+            id: 7,
+            label: '二级 3-1'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }],
+          defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
+      };
+    },
+})
+</script>
+</html>

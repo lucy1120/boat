@@ -1,0 +1,159 @@
+body{
+    background: #f7f8fa; 
+}
+div.container{
+    padding: 62px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 90%;
+    div.top{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        div.left{
+            width: 66.5%;
+            height: 384px; 
+            div.box{
+                display: flex;
+                div.img{
+                    width: 10%;
+                    min-width: 120px;
+                    height: 120px;
+                    display: flex;
+                    align-items: center;
+                }
+                div.info{
+                    padding-left: 15px;
+                    box-sizing: border-box;
+                    width: 88%;
+                    min-width: 400px;
+                    height: 100%;
+                    div.title1{
+                        width: 100%;
+                        min-height: 80px;
+                        display: flex;
+                        justify-content: space-between;
+                        h1{
+                            display: flex;
+                            align-items: center;
+                            padding-top: 10px;
+                            box-sizing: border-box;
+                            width: 80%;
+                            min-width: 400px;
+                            font-size: 36px;
+                            color: #161616;
+                            font-family: brandon;
+                            font-weight: 400;
+                        }
+                    }
+                    div.title2{
+                        width: 100%;
+                        height: 130px;
+                        color: #a0a0a0;
+                        font-size: 14px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                    }
+                    div.title3{
+                        margin-top: 40px;
+                        width: 100%;
+                        height: 42px;
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+        div.right{
+            width: 33%;
+            height: 384px;
+            div.box{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    div.module{
+        div.box{
+            padding: 10px 0;
+            box-sizing: border-box;
+            width: 100%;
+            div.list{
+                width: 100%;
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    li{
+                        margin-top: 10px;
+                       p{
+                        white-space: nowrap; /*文本强制一行显示*/
+                        overflow: hidden; /*文本溢出隐藏*/
+                        text-overflow: ellipsis; /*溢出的文本显示省略号*/
+                       } 
+                    }
+                }
+            }
+        }
+    }
+    div.end{
+        div.head{
+            width: 100%;
+            div.operation{
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 90%;
+                height: 70px;
+                font-size: 16px;
+                color: #a0a0a0;
+                div.time{
+                    margin-left: -50px;
+                }
+            }
+        }
+        div.body{
+            padding-bottom: 30px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            width: 97%;
+            border-right: 1px solid #f2f6f7;
+            display: flex;
+            justify-content: space-between;
+            div.left{
+                box-sizing: border-box;
+                width: 19%;
+                height: 100%;
+                min-height: 600px;
+                min-width: 245px;
+            }
+            div.right{
+                width: 79%;
+                div.title{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 72px;
+                    line-height: 72px;
+                    font-size: 17px;
+                    color: #161616;
+                    div.box{
+                        width: 100%;
+                        padding-left: 20px;
+                        box-sizing: border-box;
+                        font-size: 20px;
+                        font-weight: 600;
+                        border-bottom: 2px solid #0274b3;
+                    }
+                }
+                div.message{
+                    div.detail{
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+}

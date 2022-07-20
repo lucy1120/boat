@@ -1,0 +1,210 @@
+div.main {
+  width: 100%;
+  background: #f7f8fa;
+}
+div.main div.contain {
+  padding: 30px 0 30px;
+  box-sizing: border-box;
+  width: 90%;
+  min-height: 430px;
+  margin: 0 auto;
+}
+div.main div.contain div.author-info {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+div.main div.contain div.author-info aside div.top {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+div.main div.contain div.author-info aside div.top div.author-info {
+  width: 68%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+div.main div.contain div.author-info aside div.top div.author-info section {
+  margin-left: 30px;
+  padding-top: 20px;
+  padding-left: 16px;
+  box-sizing: border-box;
+  min-width: 250px;
+}
+div.main div.contain div.author-info aside div.top div.author-info section .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 100px;
+}
+div.main div.contain div.author-info aside div.top div.author-info section .detail {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  color: #777;
+  font-size: 14px;
+}
+div.main div.contain div.author-info aside div.top div.author-info section div.buttons {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+div.main div.contain div.author-info aside div.top div.author-info section div.buttons .btn {
+  margin: 3px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+}
+div.main div.contain div.author-info aside div.top div.author-operation {
+  width: 30%;
+  min-width: 220px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.main div.contain div.author-info aside div.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 130px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  background: #f9fafc;
+}
+div.main div.contain1 {
+  box-sizing: border-box;
+  width: 90%;
+  height: 1550px;
+  margin: -50px auto;
+}
+div.main div.contain1 div.message {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div.main div.contain1 div.message div.left {
+  min-width: 210px;
+  width: 18%;
+}
+div.main div.contain1 div.message div.left p {
+  padding-bottom: 15px;
+}
+div.main div.contain1 div.message div.left a.title {
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  color: #a0a0a0;
+}
+div.main div.contain1 div.message div.left div.block1 {
+  width: 100%;
+  min-height: 150px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+div.main div.contain1 div.message div.left div.block2 {
+  width: 100%;
+  min-height: 263px;
+  padding: 30px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+div.main div.contain1 div.message div.left div.block2 .option1 {
+  padding-top: 10px;
+}
+div.main div.contain1 div.message div.left div.block3 {
+  width: 100%;
+  min-height: 215px;
+  padding: 30px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+div.main div.contain1 div.message div.left div.block3 div.list {
+  display: flex;
+  flex-direction: column;
+}
+div.main div.contain1 div.message div.left div.block3 div.list .tip1 {
+  margin-top: 10px;
+}
+div.main div.contain1 div.message div.left div.block4 {
+  width: 100%;
+  min-height: 263px;
+  padding: 30px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+div.main div.contain1 div.message div.left div.block4 .option1 {
+  margin-top: 10px;
+}
+div.main div.contain1 div.message div.left div.block5 {
+  width: 100%;
+  min-height: 263px;
+  padding: 30px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f5f5f5;
+}
+div.main div.contain1 div.message div.left div.block5 .option1 {
+  margin-top: 10px;
+}
+div.main div.contain1 div.message div.right {
+  min-width: 580px;
+  width: 80%;
+}
+div.main div.contain1 div.message div.right div.title {
+  font-size: 14px;
+  height: 45px;
+  line-height: 45px;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+div.main div.contain1 div.message div.right div.title span {
+  display: inline-block;
+  width: 200px;
+  height: 100%;
+}
+div.main div.contain1 div.message div.right div.title div.mess {
+  display: flex;
+  justify-content: space-around;
+  width: 450px;
+  height: 100%;
+}
+div.main div.contain1 div.message div.right div.container .box-card {
+  margin-bottom: 20px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .text {
+  font-size: 14px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .item {
+  margin-bottom: 18px;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:before,
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:after {
+  display: table;
+  content: "";
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .clearfix:after {
+  clear: both;
+}
+div.main div.contain1 div.message div.right div.container .box-card div.top .box-card {
+  width: 480px;
+}
+div.main div.contain1 div.message div.right div.container div.page {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="css/introduction.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="css/head.css">
+    <title>论文简介页</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <main>
+              <div class="logo">
+                <img src="images/logo2.png" alt="">
+              </div>
+              <div class="search" style="margin-top: 20px;width: 500px;">
+                <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+                  <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+              </div>
+              <div class="function">
+                <a href="##">
+                  <img src="images/icon12.png" style="width:12px;height: 12px;">
+                  分享
+                </a>
+                <a href="##">跟随</a>
+                <a href="##">关于</a>
+                <a href="##">赞助商</a>
+                <a href="##">反馈</a>
+              </div>
+            </main>
+            <section>
+              <div class="bread">
+                <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top: 20px;margin-left: 75px;">
+                  <el-breadcrumb-item :to="{ path: '/' }"><a href="index.html">首页</a></el-breadcrumb-item>
+                  <el-breadcrumb-item>论文简介页</el-breadcrumb-item>
+                  <el-breadcrumb-item>详细信息</el-breadcrumb-item>
+                </el-breadcrumb>
+              </div>
+            </section>
+        </header>
+        <div class="main">
+            <div class="content">
+                <div class="paper">
+                    <div class="papernext">
+                        <div class="left">
+                            <h1>Driver Stress Detection via Multimodal Fusion Using Attention-based CNN-LSTM</h1>
+                            <div v-for="o in 2" :key="o" class="text item">
+                                {{'DATA ' + o }}
+                            </div>
+                            <div class="text">
+                                Abstract Stress has been identified as one of major contributing factors in car crashes due to its negative impact on driving performance. It is in urgent need that the stress levels of drivers can be detected in real time with high accuracy so that intervening or navigating measures can be taken in time to mitigate the situation. Existing driver stress detection models mainly rely on traditional machine learning techniques to fuse multimodal data. However, due to the non-linear correlations among modalities, it is still challenging for traditional multimodal fusion methods to handle the real-time influx of complex multimodal and high dimensional data, and report drivers’ stress levels accurately. To solve this issue, a framework of driver stress detection through multimodal fusion using attention based deep learning techniques is proposed in this paper. Specifically, an attention based convolutional neural networks (CNN) and long short-term memory (LSTM) model is proposed to fuse non-invasive data, including eye data, vehicle data, and environmental data. Then, the proposed model can automatically extract features separately from each modality and give different levels of attention to features from different modalities through self-attention mechanism. To verify the validity of the proposed method, extensive experiments have been carried out on our dataset collected using an advanced driving simulator. Experimental results demonstrate that the performance of the proposed method on driver stress detection outperforms the state-of-the-art models with an average accuracy of 95.5%.
+                            </div>
+                            <div class="buttons">
+                                <el-row>
+                                  <span>关键词</span>
+                                  <el-button type="info" plain style="" class="btn">Machine learning</el-button>
+                                  <el-button type="info" plain style="" class="btn">Computer Science</el-button>
+                                  <el-button type="info" plain style="" class="btn">Feature extraction</el-button>
+                                  <el-button type="info" plain style="" class="btn">Deep learning</el-button>
+                                </el-row>
+                              </div>
+                            <div class="functions">
+                                <el-row>
+                                    <el-button type="primary" icon="el-icon-edit">改正</el-button>
+                                    <el-button type="primary" icon="el-icon-top-right">来源</el-button>
+                                    <el-button type="primary" icon="el-icon-paperclip">查看引用格式</el-button>
+                                    <el-button type="primary">收藏</el-button>
+                                </el-row>
+                            </div>
+                        </div>
+                        <div class="right" >
+                            <el-descriptions title="用户信息" class="datas">
+                                
+                                <el-descriptions-item label="引用个数" class="data1">
+                                    <div class="el-icon-s-opportunity"></div>
+                                    67
+                                    <a href="" class="tip">引用个数</a>
+                                </el-descriptions-item>
+                                <el-descriptions-item label="被引次数" class="data1">
+                                    <div class="el-icon-menu"></div>
+                                    4
+                                    <a href="" class="tip">被引次数</a>
+                                </el-descriptions-item>
+                                <el-descriptions-item label="KQI" class="data1">
+                                    <div class="el-icon-document-copy"></div>&nbsp;8
+                                    <a href="" class="tip">KQI</a>
+                                </el-descriptions-item>
+                            </el-descriptions>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contain1">
+                <div class="message">
+                  <div class="left">
+                    <el-card class="box-card">
+                          <div class="all" style="display: flex;flex-direction: column;">
+                             <el-badge :value="12" class="item" style="width: 55px;margin: 10px 0;">
+                                <el-button size="small">评论</el-button>
+                              </el-badge>
+                              <el-badge :value="3" class="item" style="width: 55px;margin: 10px 0;">
+                                <el-button size="small">回复</el-button>
+                              </el-badge>
+                              <el-badge :value="1" class="item" type="primary" style="width: 55px;margin: 10px 0;">
+                                <el-button size="small">内容</el-button>
+                              </el-badge>
+                          </div>
+                    </el-card>
+                   </div>
+                  <div class="right">
+                    <!-- 内容板块 -->
+                    <div class="container">
+                      <el-card class="box-card">
+                        <div class="top">
+                          <div slot="header" class="clearfix">
+                            <span>标题1</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                          </div>
+                          <div v-for="o in 4" :key="o" class="text item">
+                            {{'Ivan V. BajicWeisi LinYonghong Tian' + o }}
+                          </div>
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top">
+                          <div slot="header" class="clearfix">
+                            <span>标题2</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                          </div>
+                          <div v-for="o in 4" :key="o" class="text item">
+                            {{'Multi-modal bioelectrical signal fusion analysis based on different acquisition devices and scene settings: Overvie' + o }}
+                          </div>
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top">
+                          <div slot="header" class="clearfix">
+                            <span>标题3</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                          </div>
+                          <div v-for="o in 4" :key="o" class="text item">
+                            {{'Feature and Time Series Extraction in Artificial Neural Networks for Arousal Detection from Electrodermal Acti' + o }}
+                          </div>
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top">
+                          <div slot="header" class="clearfix">
+                            <span>标题4</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                          </div>
+                          <div v-for="o in 4" :key="o" class="text item">
+                            {{'Extended-Range Prediction Model Using NSGA-III Optimized RNN-GRU-LSTM for Driver Stress and Drowsiness' + o }}
+                          </div>
+                        </div>
+                      </el-card>
+                      <el-card class="box-card">
+                        <div class="top">
+                          <div slot="header" class="clearfix">
+                            <span>标题5</span>
+                            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                          </div>
+                          <div v-for="o in 4" :key="o" class="text item">
+                            {{'Boosting (machine learning)' + o }}
+                          </div>
+                        </div>
+                      </el-card>
+                      <div class="page">
+                        <el-pagination
+                          background
+                          layout="prev, pager, next"
+                          :total="1000">
+                        </el-pagination>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <footer>
+          <div class="container">
+            <div class="left">
+              <img src="images/logo2.png" alt="" style="width:200px">
+              <p>Email Address</p>
+              <p>acemap@cs.sjtu.edu.cn</p>
+            </div>
+            <div class="right">
+              <div class="list">
+                <ul>
+                  <li>GLOBECOM 2019</li>
+                  <li>INFOCOM 2019</li>
+                  <li>INFOCOM 2018</li>
+                  <li>NeurIPS 2018</li>
+                  <li>MOBICOM 2018</li>
+                  <li>SENSYS 2018</li>
+                  <li>OSDI 2018</li>
+                  <li>KDD 2018</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>CS Author Map</li>
+                  <li>CCF Compared Map</li>
+                  <li>CCF Core-Author Map</li>
+                  <li>Field Compared Map</li>
+                  <li>TOPIC MAP</li>
+                  <li>CCF Galaxy Map</li>
+                  <li>Turing Award 50th Anniversary Map</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Knowledge Graph: Future</li>
+                  <li>Knowledge Graph: Architecture</li>
+                  <li>Knowledge Graph: Origin</li>
+                  <li>Attention (Part2)</li>
+                  <li>Attention (Part1)</li>
+                  <li>Learning on Graph</li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>Hot Keywords in 2021</li>
+                  <li>AceRankings</li>
+                  <li>Paper Similaity Check</li>
+                  <li>Paper X-Ray</li>
+                  <li>NSFC Project Galaxy Map</li>
+                  <li>NSFC Institutional Migration Map</li>
+                  <li>Galaxy Album of Seminal Paper</li>
+                  <li>IEEE Society Statistics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>© Copyright 2015-2020 Acemap, Inc. Shanghai Jiao Tong University.</p>
+          </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="js/vue2.js"></script>
+<script type="text/javascript" src="element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+      el:"#app"
+      }); 
+</script>
+</html>
